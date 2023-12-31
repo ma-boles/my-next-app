@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import NavLink from "./navLink/navLink";
+import { useState } from "react";
+import styles from "./links.module.css";
 
 export default function Links () {
 
+    const [open, setOpen] = useState(false);
     const links = [
         {
             title: "Home",
@@ -21,13 +27,39 @@ export default function Links () {
         },
 ];
 
+// temp
+const session = true
+const isAdmin = false
+
     return (
         <>
         <div>
+            <div className={styles.links}>
             {links.map((link => (
-            <Link href={link.path} key={link.title} className="bg-red-600 ">{link.title}</Link>
-            )))}
+                <NavLink item={link} key={link.title}/>
+            )))} {
+                session ? (
+                    <>
+                    {
+                    isAdmin && (
+                        <NavLink item={{ title: "Admin", path: "/admin"}}/>
+                    )
+                }
+                <button>Logout</button>
+                </>
+                ) : (
+                    <NavLink item={{ title: "Login", path: "/Login"}}/>
+    )
+            }
+            </div>
         </div>
+        <button onClick={() => setOpen((prev) => !prev)}>Menu</button> 
+        {
+            open && <div className={styles.mobileLinks}>{links.map((link) => (
+                <NavLink item={link} key={link.title}/>
+            ))}
+            </div>
+        }
         </>
     )
 }

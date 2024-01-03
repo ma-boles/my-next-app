@@ -7,7 +7,7 @@
 }
 
 .active {
-    background-color: slateblue;
+    background-color: var(--btn);
     color: white;
 }
 

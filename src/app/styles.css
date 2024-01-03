@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-    --bg: rgb(40, 40, 40);
+    --bg: rgb(1, 0, 74);
     --text: whitesmoke;
-    --btn: rgb(72, 72, 255);
+    --btn: rgb(35, 35, 255);
 }
 
 * {

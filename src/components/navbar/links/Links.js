@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import NavLink from "./navLink/navLink";
 import { useState } from "react";
 import styles from "./links.module.css";
@@ -53,7 +54,9 @@ const isAdmin = false
             }
             </div>
         </div>
-        <button onClick={() => setOpen((prev) => !prev)}>Menu</button> 
+        <button className={styles.menuButton} onClick={() => setOpen((prev) => !prev)}>
+            <Image src="bars-solid.svg" alt="menu" width={20} height={20}/>
+            </button> 
         {
             open && <div className={styles.mobileLinks}>{links.map((link) => (
                 <NavLink item={link} key={link.title}/>

@@ -1,9 +1,9 @@
 export default function Footer () {
     return (
         <>
-        <div>
-            <hr className="pb-4"/>
-            <h2 className="pr-2 pb-2 text-right">&copy; mab.dev 2024</h2>
+        <div className="flex justify-between text-slate-500">
+            <div>mab.dev</div>
+            <div className="pr-2 pb-2 text-right">&copy; All Rights Reserved 2024</div>
         </div>
         </>
     )

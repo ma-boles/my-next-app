@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    gap: 100px;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.formContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form input,
+.form textarea {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid var(--btn);
+    background-color: var(--bg);
+}
+.imageContainer {
+    flex: 1;
+    position: relative;
+}
+
+.button {
+    padding: .4rem;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--btn);
+}

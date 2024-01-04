@@ -19,7 +19,7 @@ export default function Links () {
             path: "/about",
         },
         {
-            title: "Blog",
+            title: "Projects",
             path: "/blog",
         },
         {

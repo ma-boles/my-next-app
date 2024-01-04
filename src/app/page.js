@@ -5,9 +5,9 @@ export default function HomePage () {
     <>
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h1 className="text-5xl font-semibold">Creative.<br/>
-         Thoughts. <br/>
-         Agency.</h1>
+        <h1 className="text-5xl font-semibold">Initiative<br/>
+         Open <br/>
+         Source</h1>
         <p className="text-2xl">Bringing creativity into reality.</p>
         <div className={styles.buttons}>
           <button className={styles.button}>Learn More</button>

@@ -1,6 +1,9 @@
+"use client"
+
 import styles from "../contact/contact.module.css";
 
 export default function ContactPage () {
+    console.log("it works here")
     return (
         <>
         <div className={styles.container }>

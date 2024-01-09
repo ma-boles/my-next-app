@@ -10,8 +10,9 @@
 }
 .imageContainer {
     width: 90%;
-    height: 400px;
+    height: 300px;
     position: relative;
+    background-color: white;
 }
 
 .date {
@@ -20,3 +21,6 @@
     margin: auto;
 }
 
+.bottom {
+    width: 90%;
+}

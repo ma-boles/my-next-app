@@ -2,6 +2,8 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 3rem;
+    justify-content: center;
 }
 
 .post {

@@ -8,9 +8,9 @@ export default function PostCard ({post}) {
         <div className={styles.container}>
             <div className={styles.top}>
                 <div className={styles.imageContainer}>
-                                   
+                    <Image src={post.image} width={600} height={600} alt="image of project" className="flex items-center "/>
                 </div>
-                <span className={styles.date}>01.01.2024</span>
+                <span className={styles.date}>{post.date}</span>
             </div>
             <div className={styles.bottom}>
                 <h1 className="text-lg font-bold">{post.title}</h1>

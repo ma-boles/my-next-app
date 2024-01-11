@@ -15,8 +15,7 @@ export default function PostCard ({post}) {
             <div className={styles.bottom}>
                 <h1 className="text-lg font-bold">{post.title}</h1>
                 <p className="text-sm text-slate-500">{post.body}</p>
-                <p>READ MORE</p>
-                
+                <Link href="/blog/post">READ MORE</Link>                
             </div>
         </div>
         

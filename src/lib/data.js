@@ -1,4 +1,57 @@
-const users = [
+import { Post } from "./models";
+import { User } from "./models";
+import { conntectToDB } from "./utils";
+
+
+export const getPosts =  async () => {
+    try {
+        conntectToDB(); 
+        const posts = await Post.find()
+        return posts
+    }
+    catch(err) {
+        console.log(err)
+        throw new Error("Failed to fetch post")
+    }
+};
+
+export const getPost = async (slug) => {
+    try {
+        conntectToDB();
+        const post = await Post.find({slug})
+        return post;
+    } catch (err) {
+        console.log(err);
+        throw new Error("Failed to fetch post")
+    }
+}
+
+export const getUser = async (id) => {
+    try {
+        conntectToDB();
+        const user = await User.findById(id);
+        return user;
+    } catch(err) {
+        console.log(err);
+        throw new Error ("Failed to fetch user")
+    }
+}
+
+// for admin dashboard
+export const getUsers = async () => {
+    try {
+        conntectToDB();
+        const users = await User.find();
+        return users;
+    } catch(err) {
+        console.log(err);
+        throw new Error ("Failed to fetch users")
+    }
+}
+
+
+
+/*const users = [
     {
         id:1,
         name: "John"
@@ -58,16 +111,4 @@ const posts = [
         date: "09.24.2003",
         image: "/pexels-kevin-bidwell-3863791.jpg"
     },
-]
-
-export const getPosts =  async () => {
-    return posts;
-};
-
-export const getPost = async (id) => {
-    return posts.find((post) => post.id === id);
-}
-
-export const getUser = async (id) => {
-    return users.find((user) => user.id === id);
-}
+]*/

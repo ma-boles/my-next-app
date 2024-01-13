@@ -1,34 +1,34 @@
 import { Post } from "./models";
 import { User } from "./models";
-import { conntectToDB } from "./utils";
+import { connectToDB } from "./utils";
 
 
 export const getPosts =  async () => {
     try {
-        conntectToDB(); 
-        const posts = await Post.find()
-        return posts
+        connectToDB(); 
+        const posts = await Post.find();
+        return posts;
     }
     catch(err) {
-        console.log(err)
-        throw new Error("Failed to fetch post")
+        console.log(err);
+        throw new Error("Failed to fetch post");
     }
 };
 
 export const getPost = async (slug) => {
     try {
-        conntectToDB();
-        const post = await Post.find({slug})
+        connectToDB();
+        const post = await Post.findOne({slug});
         return post;
     } catch (err) {
         console.log(err);
-        throw new Error("Failed to fetch post")
+        throw new Error("Failed to fetch post");
     }
 }
 
 export const getUser = async (id) => {
     try {
-        conntectToDB();
+        connectToDB();
         const user = await User.findById(id);
         return user;
     } catch(err) {
@@ -40,7 +40,7 @@ export const getUser = async (id) => {
 // for admin dashboard
 export const getUsers = async () => {
     try {
-        conntectToDB();
+        connectToDB();
         const users = await User.find();
         return users;
     } catch(err) {

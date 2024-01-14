@@ -1,4 +1,4 @@
-const { default: mongoose, connections }  = require("mongoose");
+const { default: mongoose }  = require("mongoose");
 
 const connection = {};
 

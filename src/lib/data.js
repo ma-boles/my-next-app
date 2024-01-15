@@ -1,5 +1,4 @@
-import { Post } from "./models";
-import { User } from "./models";
+import { Post, User } from "./models";
 import { connectToDB } from "./utils";
 
 
@@ -18,7 +17,7 @@ export const getPosts =  async () => {
 export const getPost = async (slug) => {
     try {
         connectToDB();
-        const post = await Post.find({slug});
+        const post = await Post.findOne({ slug });
         return post;
     } catch (err) {
         console.log(err);

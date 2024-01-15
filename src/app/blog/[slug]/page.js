@@ -1,8 +1,13 @@
 import styles from "./singlePost.module.css";
+import { getPost } from "@/lib/data";
 import Image from "next/image";
 
 
-export default function SinglePostPage () {
+const SinglePostPage = async ({ params }) => {
+    const { slug } = params;
+
+    const post = await getPost(slug);
+
     return (
         <>
         <div className={styles.container}>
@@ -15,5 +20,7 @@ export default function SinglePostPage () {
             </div>  
         </div>
         </>
-    )
-}
+    );
+};
+
+export default SinglePostPage;
